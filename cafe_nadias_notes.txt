@@ -1,0 +1,124 @@
+/** 
+ * Install Laravel 
+ */
+    1. Create a project folder
+    2. Change to the project folder
+    3. Install laravel in the project folder using Composer
+    
+        example:
+
+            composer create-project --prefer-dist laravel/laravel .
+
+    4. Generate the user authentication scaffolding.
+
+        * Use the artisan make:auth command.
+
+        example: 
+
+          php artisan make:auth  
+        
+
+        * Add role field to user table. Go to the User table migration in the "database" folder and 
+        add a roles column.
+    
+        example:
+
+
+        $table->boolean('is_admin')->default(false);
+
+        or
+
+        $table->string('role');    
+
+        or
+
+        $table-unsignedInteger('role');
+
+    5. Run the database migration to create the authentication tables.
+
+        example:  
+
+        php artisan migrate
+
+
+    6. Enable Password Reset/Forgotten Password and Email Verification
+
+        * Open the User model (User.php) 
+        * Add the "MustVerifyEmail" as a class implementation
+
+            example: 
+            
+            class User extends Authenticatable implements MustVerifyEmail
+
+        * Go to the route file (web.php) 
+        * Add an options array to the Auth::Routes() 
+
+            example:
+
+            Auth::routes(['verify'  => true]);
+
+
+        * Add the middleware option with the "verified" key to the end of the route that needs to be protected.
+
+            example:  
+
+            Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+
+
+        * Update email settings for mailgun or mailtrap in the .env file and restart the artisan server.
+
+
+    7. Update settings in Webpack.mix.js to compile scss and javascript
+
+        * Enable cache busting - add the following:
+
+        if (mix.inProduction()) {
+            mix.version();
+        }
+
+        *Enable Browser refresh when files are updated and saved.     
+
+        mix.browserSync('localhost:8001');
+
+
+
+    8. Integrate Template Layout
+
+
+    9. Create Categories Model and seed database
+
+
+    10. Build Views with Blade Templates
+
+    11. Injecting Props in Vue components.
+
+    12. Building a CRUD Component
+
+
+
+
+
+- Create Model Policy
+
+    Example
+    
+    php artisan make:policy CategoryPolicy --model=Category
+
+
+- Add a public function "before" above the first function.
+    This checks the user role prior to executing each called function.
+
+    Example:
+
+    public function before($user, $ability) {
+
+        if ($user->is_admin) {
+            return true;
+        }
+
+    }
+
+
+
+
+

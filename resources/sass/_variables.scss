@@ -1,0 +1,72 @@
+
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: "Nunito", sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+$primary:   #268c49;
+$secondary: #8c7c26;
+$tertiary:  #7c268c;
+
+.networks {
+
+  /*
+    Penned by Mindy McAdams
+    Gainesville, Florida, USA
+    mindymcadams.com
+    @macloo
+  */
+
+  ul.social-set {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: auto;
+
+    li {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+
+    /* Font Awesome icons */
+    a.social-icon {
+      font-size: 1em;
+      line-height: 1.2em;
+      padding: 4px;
+      background: #accfc0;
+      color: #fff;
+      margin-right: 4px;
+      margin-bottom: 4px !important;
+      padding-bottom: 4px !important;
+
+      &:hover,
+      &:focus {
+        background: #6d8785;
+      }
+    }
+
+  }
+}
