@@ -1,3 +1,13 @@
+## About Project
+
+Cafe Nadias is a fictitious restaurant website and is based on a Linkedin Learning project called:
+
+-[Building Laravel and Vue.JS Web Apps](https://www.linkedin.com/learning/building-laravel-and-vue-js-web-apps).
+
+More to come. 
+
+<hr>
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
