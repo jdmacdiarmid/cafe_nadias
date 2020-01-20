@@ -15,3 +15,6 @@ yarn-error.log
 .idea/scssLintPlugin.xml
 .idea/vcs.xml
 .idea/workspace.xml
+.idea/codeStyles/Project.xml
+.idea/misc.xml
+.idea/workspace.xml
